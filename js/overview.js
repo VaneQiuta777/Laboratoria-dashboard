@@ -302,7 +302,7 @@ function lifeSkills(data, campus = campusDefault, cohort = cohortDefault) {
 
 // *** inicio funcionalidad de Student satisfaction
 
-function getLastStudentSatisfaction(ratings) {
+function getStudentSatisfaction(ratings) {
   var studentSatisfaction = 0;
   // ultimo sprint
   var lastSprint = ratings.length - 1;
@@ -315,30 +315,9 @@ function getLastStudentSatisfaction(ratings) {
 
 function studentSatisfaction(data, campus = campusDefault, cohort = cohortDefault) {
   var ratings = getRatings(data, campus, cohort);
-
-  return getLastStudentSatisfaction(ratings);
+  
+  return getStudentSatisfaction(ratings);
 }
 
 /* var temp = studentSatisfaction(data); */
 // --- fin funcionalidad de Student satisfaction
-
-// *** inicio funcionalidad de Teacher reating
-
-function getLastTeacherRating(ratings) {
-  var teacherRating = 0;
-  // ultimo sprint
-  var lastSprint = ratings.length - 1;
-
-  teacherRating = ratings[lastSprint].teacher;
-
-  return teacherRating.toFixed(2);
-}
-
-function teacherRating(data, campus = campusDefault, cohort = cohortDefault) {
-  var ratings = getRatings(data, campus, cohort);
-
-  return getLastTeacherRating(ratings);
-}
-
-var temp = teacherRating(data);
-// --- fin funcionalidad de Teacher reating

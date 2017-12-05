@@ -23,6 +23,7 @@ var centers = [
 function getCohorts() {
   for (var i = 0; i < centers.length; i++) {
     // cohortes por sede
+    debugger
     keys = Object.keys(data[centers[i].key]);
     // numero de cohortes
     centers[i].cohorts = keys.length;
@@ -41,8 +42,4 @@ function getStudents(data, campus = campusDefault, cohort = cohortDefault) {
   return data[campus][cohort].students;
 }
 
-// Función que retorna los ratings del campus y cohort seleccionado
-function getRatings(data, campus, cohort) {
-  return data[campus][cohort].ratings;
-}
 /* var temp = getStudents(data); */
